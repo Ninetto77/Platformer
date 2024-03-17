@@ -1,11 +1,6 @@
-using System;
 using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.SearchService;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+
 using static Cinemachine.DocumentationSortingAttribute;
 
 public class GameManager : MonoBehaviour
@@ -34,7 +29,13 @@ public class GameManager : MonoBehaviour
     private StateMashine _stateMashine;
     private MySceneManager _sceneManager;
 
-   
+    //[Header("Windows")]
+    //[SerializeField] private Window _gameScreen;
+    //[SerializeField] private Window _looseGameScreen;
+    //[SerializeField] private Window _pauseGameScreen;
+    //[SerializeField] private Window _menuGameScreen;
+    //[SerializeField] private Window _winLevelScreen;
+
     void Start()
     {
         _stateMashine = GetComponent<StateMashine>();
@@ -98,7 +99,6 @@ public class GameManager : MonoBehaviour
     {
         _stateMashine.ChangeStates(StateMashine.StateType.pause);
         Time.timeScale = 0f;
-
     }
 
     public void RestartGame()

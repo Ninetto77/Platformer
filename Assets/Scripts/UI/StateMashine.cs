@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class StateMashine : MonoBehaviour
@@ -14,19 +12,17 @@ public class StateMashine : MonoBehaviour
         menu
     }
 
-    [SerializeField] private GameObject _gameScreen;
-    [SerializeField] private GameObject _looseGameScreen;
-    [SerializeField] private GameObject _pauseGameScreen;
-    [SerializeField] private GameObject _menuGameScreen;
-    [SerializeField] private GameObject _winLevelScreen;
-    private GameObject _currentScreen;
-    void Start()
+    [Header("Windows")]
+    [SerializeField] private Window _gameScreen;
+    [SerializeField] private Window _looseGameScreen;
+    [SerializeField] private Window _pauseGameScreen;
+    [SerializeField] private Window _menuGameScreen;
+    [SerializeField] private Window _winLevelScreen;
+
+    private Window _currentScreen;
+
+    private void Start()
     {
-        _gameScreen.SetActive(true);
-        _looseGameScreen.SetActive(false);
-        _pauseGameScreen.SetActive(false);
-        _menuGameScreen.SetActive(false);
-        _winLevelScreen.SetActive(false);
         _currentScreen = _gameScreen;
     }
 
@@ -36,29 +32,29 @@ public class StateMashine : MonoBehaviour
         {
             return;
         }
-        _currentScreen.SetActive(false);
+        _currentScreen.Close_Instantly();
 
-        switch(state)
+        switch (state)
             {
            
             case StateType.game:
-                _gameScreen.SetActive(true);
+                _gameScreen.Open_Instantly();
                 _currentScreen = _gameScreen;
                 break;
             case StateType.looseGame:
-                _looseGameScreen.SetActive(true);
+                _looseGameScreen.Open_Instantly();
                 _currentScreen = _looseGameScreen;
                 break;
             case StateType.winLevel:
-                _winLevelScreen.SetActive(true);
+                _winLevelScreen.Open_Instantly();
                 _currentScreen = _winLevelScreen;
                 break;
             case StateType.pause:
-                _pauseGameScreen.SetActive(true);
+                _pauseGameScreen.Open_Instantly();
                 _currentScreen = _pauseGameScreen;
                 break;
             case StateType.menu:
-                _menuGameScreen.SetActive(true);
+                _menuGameScreen.Open_Instantly();
                 _currentScreen = _menuGameScreen;
                 break;
         }
