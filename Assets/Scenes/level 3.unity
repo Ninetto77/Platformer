@@ -393,6 +393,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuGameCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7178254890747789314, guid: 7f712c170656e1141bb9fcde63d8c171, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7178254890747789315, guid: 7f712c170656e1141bb9fcde63d8c171, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3954,10 +3958,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1458362180}
-    - target: {fileID: 2612365126768327361, guid: 9b94da79ac7a5f243810702fb6a77b69, type: 3}
-      propertyPath: m_Interactable
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2612365126768327361, guid: 9b94da79ac7a5f243810702fb6a77b69, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
